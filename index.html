@@ -26,26 +26,7 @@
 									</div>
 									<div class="span-3">
 										<p id="my-form-title">Describe what you need and get your app just in a few hours:</p>
-										<form method="post" action="https://formspree.io/f/mqkgvrde" id="my-form">
-											<div class="fields">
-												<div class="field half">
-													<label for="name">Name</label>
-													<input type="text" name="name" id="name" />
-												</div>
-												<div class="field half">
-													<label for="email">Email</label>
-													<input type="email" name="email" id="email" />
-												</div>
-												<div class="field">
-													<label for="message">Message</label>
-													<textarea name="message" id="message" rows="4"></textarea>
-												</div>
-											</div>
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="button primary" id="my-form-button"/></li>
-											</ul>
-										</form>
-										<p id="my-form-status"></p>
+										<iframe src="https://coda.io/embed/ln8oGthPIE" width=900 height=400 style="max-width: 100%;" allow="fullscreen"></iframe>
 									</div>
 								</div>
 							</section>
@@ -337,52 +318,6 @@ daria@tailoredbase.com
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-			window.addEventListener("DOMContentLoaded", function() {
-				// get the form elements defined in your form HTML above
-				var form = document.getElementById("my-form");
-				var title = document.getElementById("my-form-title");
-				var button = document.getElementById("my-form-button");
-				var status = document.getElementById("my-form-status");
-
-				// Success and Error functions for after the form is submitted
-				function success() {
-					// form.reset();
-					title.style = "display: none ";
-					form.style = "display: none ";
-					button.style = "display: none ";
-					status.innerHTML = "Thanks! We'll be in touch soon";
-				}
-
-				function error() {
-					status.innerHTML = "Oops! There was a problem.";
-				}
-
-				// handle the form submission event
-				form.addEventListener("submit", function(ev) {
-				ev.preventDefault();
-				var data = new FormData(form);
-				ajax(form.method, form.action, data, success, error);
-				});
-			});
-			
-			// helper function for sending an AJAX request
-			function ajax(method, url, data, success, error) {
-				var xhr = new XMLHttpRequest();
-				xhr.open(method, url);
-				xhr.setRequestHeader("Accept", "application/json");
-				xhr.onreadystatechange = function() {
-				if (xhr.readyState !== XMLHttpRequest.DONE) return;
-				if (xhr.status === 200) {
-					success(xhr.response, xhr.responseType);
-				} else {
-					error(xhr.status, xhr.response, xhr.responseType);
-				}
-				};
-				xhr.send(data);
-			}
-			</script>
 
 	</body>
 </html>
